@@ -3,7 +3,7 @@
 
 	export let placeholder = 'toggle_placeholder';
 	export let checked = false;
-	export let onChangeFn = (e: any) => {
+	export let onChangeFn = (e: Event): void => {
 		e;
 	};
 </script>

@@ -54,4 +54,4 @@
 	Reset
 </button>
 
-<Toggle onChangeFn={(e) => translate.changeLang()} placeholder={$currentLang} />
+<Toggle onChangeFn={() => translate.changeLang()} placeholder={$currentLang} />

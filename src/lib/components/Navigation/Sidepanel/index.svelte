@@ -6,17 +6,15 @@
 		faChevronCircleLeft,
 		faChevronCircleRight
 	} from '@fortawesome/free-solid-svg-icons';
-	import { getContext, onDestroy, onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import { isLogin$, toggleLoginModal, userProfile$ } from '$lib/store';
 	import { goto } from '$app/navigation';
 	import { ROUTES } from '$lib/constants/routes';
 	import { page } from '$app/stores';
 	import type { IPage } from '$lib/models';
-	import type { Translate } from '$lib/services/translateService';
 
 	export let pages: IPage[];
 
-	const translate: Translate = getContext('translate');
 	const subscription = [];
 	let currentPage = '';
 	let displayName = '';
