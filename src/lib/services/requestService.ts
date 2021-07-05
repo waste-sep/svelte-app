@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig, AxiosError } from 'axios';
-import { auth } from '$lib/firebase';
+import { auth } from '$lib/services/firebase';
 import { setIsLoading } from '$lib/store';
 
 export async function requestService<T>(

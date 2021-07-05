@@ -1,5 +1,5 @@
 import type { IUserReponse } from './api.model';
-import { requestService } from './requestService';
+import { requestService } from '../services/requestService';
 
 export function apiGetAuthentication(): Promise<IUserReponse> {
 	return requestService<IUserReponse>('GET', `${import.meta.env.VITE_API_URL}/api/auth`);

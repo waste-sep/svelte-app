@@ -1,8 +1,8 @@
 <script lang="ts">
-	import Fa from '$lib/components/Fa/index.svelte';
-	import { onDestroy, onMount } from 'svelte';
+	import Fa from '$lib/components/UserInterfaces/Fa/index.svelte';
+	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
-	import { EModalSize } from '$lib/components/Modal/model';
+	import { EModalSize } from '$lib/components/UserInterfaces/Modal/model';
 	import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 	import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 	import {
@@ -13,32 +13,14 @@
 		setUserProfile,
 		setIsLoading
 	} from '$lib/store';
-	import LoginModal from '$lib/components/Modal/ConfirmModal/index.svelte';
+	import LoginModal from '$lib/components/UserInterfaces/Modal/ConfirmModal/index.svelte';
 	import { apiGetAuthentication, apiPostAuthentication } from '$lib/api/authentication';
-	import { auth, provider } from '$lib/firebase';
+	import { auth, provider } from '$lib/services/firebase';
 	import { ROUTES } from '$lib/constants/routes';
 
-	let modalShown: boolean;
-	let loginModalShown: boolean;
-	let isLogin: boolean;
-	const subscription = [];
-
-	subscription.push(isLogin$.subscribe((status) => (isLogin = status)));
-
 	onMount(() => {
-		subscription.push(
-			isLogin$.subscribe((status) => {
-				modalShown = !status && loginModalShown;
-			})
-		);
-		subscription.push(
-			loginModalShown$.subscribe((status) => {
-				modalShown = status && !isLogin;
-			})
-		);
-
 		auth.onAuthStateChanged(async (user) => {
-			if (!user || isLogin) return;
+			if (!user || $isLogin$) return;
 
 			setIsLoading(true);
 			const response = await apiGetAuthentication();
@@ -56,17 +38,13 @@
 		});
 	});
 
-	onDestroy(() => {
-		subscription.forEach((unsub) => unsub());
-	});
-
 	function handleLoginWithGoogle() {
 		auth.signInWithPopup(provider);
 		toggleLoginModal();
 	}
 </script>
 
-{#if modalShown}
+{#if $loginModalShown$ && !$isLogin$}
 	<LoginModal
 		icon={faSignInAlt}
 		heading="Login"

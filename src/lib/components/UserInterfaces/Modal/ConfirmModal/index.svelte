@@ -1,12 +1,13 @@
 <script lang="ts">
-	import Fa from '$lib/components/Fa/index.svelte';
+	import Fa from '$lib/components/UserInterfaces/Fa/index.svelte';
 	import type { IconDefinition } from '@fortawesome/fontawesome-common-types';
 	import { createEventDispatcher } from 'svelte';
 	import { _colorToneMapping, EModalColorTone, EModalSize } from '../model';
 
 	export let icon: IconDefinition;
 	export let heading: string;
-	export let confirmBtn: string;
+	export let confirmBtn = '';
+	export let cancelBtn = '';
 	export let colorTone: EModalColorTone = EModalColorTone.GRAY;
 	export let size: EModalSize = EModalSize.LG;
 
@@ -16,6 +17,7 @@
 <div
 	class="min-w-screen h-screen animated fadeIn faster  fixed  left-0 top-0 flex justify-center items-center inset-0 z-50 outline-none focus:outline-none"
 	style="background: rgba(0,0,0,.2);"
+	on:click={() => dispatch('clickBg')}
 >
 	<div class="w-full {size} p-5 relative mx-auto my-auto rounded-xl shadow-lg  bg-white ">
 		<div class="">
@@ -31,15 +33,23 @@
 					<slot />
 				</p>
 			</div>
-			<div class="pt-5 text-center space-x-4 md:block">
-				<button
-					class="mb-2 md:mb-0 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg
-					{_colorToneMapping[colorTone].button}"
-					on:click={() => dispatch('confirm')}
-				>
-					{confirmBtn}
-				</button>
-			</div>
+			{#if confirmBtn || cancelBtn}
+				<div class="pt-5 text-center space-x-4 md:block">
+					<button
+						class="mb-2 md:mb-0 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg
+          	{_colorToneMapping[colorTone].button}"
+						on:click={() => dispatch('confirm')}
+					>
+						{confirmBtn}
+					</button>
+					<button
+						class="mb-2 md:mb-0 px-5 py-2 text-sm shadow-sm font-medium tracking-wider text-white rounded-full hover:shadow-lg"
+						on:click={() => dispatch('cancel')}
+					>
+						{cancelBtn}
+					</button>
+				</div>
+			{/if}
 		</div>
 	</div>
 </div>
