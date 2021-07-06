@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { faExclamation } from '@fortawesome/free-solid-svg-icons';
-	import { EModalColorTone } from '$lib/components/Modal/model';
-	import ErrorModal from '$lib/components/Modal/DialogModal/index.svelte';
+	import { EModalColorTone } from '$lib/components/UserInterfaces/Modal/model';
+	import ErrorModal from '$lib/components/UserInterfaces/Modal/DialogModal/index.svelte';
 	import { setIsLoading } from '$lib/store';
 
 	let errorShown = false;

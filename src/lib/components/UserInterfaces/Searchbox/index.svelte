@@ -1,8 +1,10 @@
 <script lang="ts">
-	import Fa from '$lib/components/Fa/index.svelte';
+	import { _ } from 'svelte-i18n';
+	import Fa from '$lib/components/UserInterfaces/Fa/index.svelte';
 	import { faSearch, faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 
 	export let suggestionList: string[] = [];
+	export let placeholder = 'search_placeholder';
 </script>
 
 <div class="inline-flex flex-col justify-center relative text-gray-500">
@@ -10,7 +12,7 @@
 		<input
 			type="text"
 			class="p-2 pl-8 rounded border border-gray-200 bg-gray-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:border-transparent"
-			placeholder="Search"
+			placeholder={$_(placeholder)}
 		/>
 		<Fa class="w-4 h-4 absolute left-2.5 top-3.5" icon={faSearch} />
 	</div>

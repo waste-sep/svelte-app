@@ -49,6 +49,7 @@
 		"@fortawesome/free-solid-svg-icons": "^5.15.3",
 		"@sveltejs/kit": "next",
 		"axios": "^0.21.1",
-		"firebase": "^8.6.5"
+		"firebase": "^8.6.5",
+		"svelte-i18n": "^3.3.9"
 	}
 }

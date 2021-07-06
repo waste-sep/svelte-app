@@ -1,0 +1,24 @@
+{
+	"en": {
+		"project_name_fullname": "Senior Project EN",
+		"project_name_shortname": "S",
+		"home_page": "Home",
+		"search_page": "Search",
+		"discover_page": "Discover",
+		"analytics_page": "Analytics",
+		"search_placeholder": "Search",
+		"setting_header": "Setting",
+		"edit_profile_button": "Edit Profile"
+	},
+	"th": {
+		"project_name_fullname": "Senior Project TH",
+		"project_name_shortname": "S",
+		"home_page": "หน้าหลัก",
+		"search_page": "ค้นหา",
+		"discover_page": "ค้นพบ",
+		"analytics_page": "สถิติ",
+		"search_placeholder": "ค้นหา",
+		"setting_header": "ตั้งค่า",
+		"edit_profile_button": "แก้ไข้ข้อมูล"
+	}
+}

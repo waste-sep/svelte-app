@@ -3,9 +3,9 @@
 </script>
 
 <script lang="ts">
-	import WarningModal from '$lib/components/Modal/DialogModal/index.svelte';
-	import Card from '$lib/components/Card/index.svelte';
-	import { EModalColorTone } from '$lib/components/Modal/model';
+	import WarningModal from '$lib/components/UserInterfaces/Modal/DialogModal/index.svelte';
+	import Card from '$lib/components/UserInterfaces/Card/index.svelte';
+	import { EModalColorTone } from '$lib/components/UserInterfaces/Modal/model';
 	import { faExclamation } from '@fortawesome/free-solid-svg-icons';
 
 	let warningShown = false;
@@ -20,7 +20,7 @@
 
 	<button
 		on:click={() => (warningShown = !warningShown)}
-		class="bg-yellow-400 hover:bg-yellow-700 text-gray-100 font-bold py-2 px-4 rounded"
+		class="bg-yellow-100 hover:bg-yellow-200 text-gray-700 font-bold py-2 px-4 rounded"
 	>
 		Alert
 	</button>

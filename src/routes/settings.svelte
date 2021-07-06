@@ -1,7 +1,10 @@
 <script lang="ts">
+	import { _ } from 'svelte-i18n';
 	import { apiPostAuthentication } from '$lib/api/authentication';
 	import { setUserProfile, userProfile$ } from '$lib/store';
-	import { onMount } from 'svelte';
+	import { getContext, onMount } from 'svelte';
+	import Toggle from '$lib/components/UserInterfaces/Toggle/index.svelte';
+	import type { Translate } from '$lib/services/translateService';
 
 	let ogName: string;
 	let ogPhoneNo: string;
@@ -9,6 +12,8 @@
 	let editableName: string;
 	let editablePhoneNo: string;
 	let editablePhoto: string;
+	const translate: Translate = getContext('translate');
+	const currentLang = translate.currentLang$;
 
 	onMount(() => {
 		userProfile$.subscribe((profile) => {
@@ -33,7 +38,7 @@
 	}
 </script>
 
-<div class="text-4xl">Settings</div>
+<div class="text-4xl">{$_('setting_header')}</div>
 <input type="text" bind:value={editableName} />
 <input type="text" bind:value={editablePhoneNo} />
 <button
@@ -48,3 +53,5 @@
 >
 	Reset
 </button>
+
+<Toggle onChangeFn={() => translate.changeLang()} placeholder={$currentLang} />
