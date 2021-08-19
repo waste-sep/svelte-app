@@ -3,7 +3,8 @@ export const ROUTES = {
 	SEARCH: '/search',
 	DISCOVER: '/discover',
 	ANALYTICS: '/analytics',
-	SETTINGS: '/settings'
+	SETTINGS: '/settings',
+	USER_WASTE: '/user_wastes'
 };
 
 export const PROTECTED_ROUTES = [ROUTES.SETTINGS];

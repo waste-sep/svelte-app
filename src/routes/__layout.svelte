@@ -9,7 +9,13 @@
 
 <script lang="ts">
 	import '../app.postcss';
-	import { faHome, faSearch, faGlobe, faChartLine } from '@fortawesome/free-solid-svg-icons';
+	import {
+		faHome,
+		faSearch,
+		faGlobe,
+		faChartLine,
+		faRecycle
+	} from '@fortawesome/free-solid-svg-icons';
 	import GlobalErrorHandler from '$lib/components/ErrorHandler/index.svelte';
 	import Sidepanel from '$lib/components/Navigation/Sidepanel/index.svelte';
 	import Bottombar from '$lib/components/Navigation/Bottombar/index.svelte';
@@ -35,7 +41,8 @@
 		{ icon: faHome, url: ROUTES.HOME, key: 'home_page' },
 		{ icon: faSearch, url: ROUTES.SEARCH, key: 'search_page' },
 		{ icon: faGlobe, url: ROUTES.DISCOVER, key: 'discover_page' },
-		{ icon: faChartLine, url: ROUTES.ANALYTICS, key: 'analytics_page' }
+		{ icon: faChartLine, url: ROUTES.ANALYTICS, key: 'analytics_page' },
+		{ icon: faRecycle, url: ROUTES.USER_WASTE, key: 'user_wastes_page' }
 	];
 </script>
 

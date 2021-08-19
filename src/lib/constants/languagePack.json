@@ -6,9 +6,15 @@
 		"search_page": "Search",
 		"discover_page": "Discover",
 		"analytics_page": "Analytics",
+		"user_wastes_page": "My waste",
 		"search_placeholder": "Search",
 		"setting_header": "Setting",
-		"edit_profile_button": "Edit Profile"
+		"edit_profile_button": "Edit Profile",
+		"wastecard__name_plastic_1": "Plastic bottle 1",
+		"wastecard__name_plastic_2": "Plastic bottle 2",
+		"wastecard__name_battery": "Battery",
+		"wastecard__btn_type_recycle": "Can be recycled",
+		"wastecard__btn_type_no_recycle": "Can be recycled"
 	},
 	"th": {
 		"project_name_fullname": "Senior Project TH",
@@ -17,8 +23,14 @@
 		"search_page": "ค้นหา",
 		"discover_page": "ค้นพบ",
 		"analytics_page": "สถิติ",
+		"user_wastes_page": "ขยะของฉัน",
 		"search_placeholder": "ค้นหา",
 		"setting_header": "ตั้งค่า",
-		"edit_profile_button": "แก้ไข้ข้อมูล"
+		"edit_profile_button": "แก้ไข้ข้อมูล",
+		"wastecard__name_plastic_1": "ขวดพลาสติกใส",
+		"wastecard__name_plastic_2": "ขวดพลาสติกขุ่น",
+		"wastecard__name_battery": "ถ่านไฟฉาย",
+		"wastecard__btn_type_recycle": "รีไซเคิลได้",
+		"wastecard__btn_type_no_recycle": "รีไซเคิลไม่ได้"
 	}
 }
